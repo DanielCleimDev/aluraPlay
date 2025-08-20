@@ -1,0 +1,164 @@
+/* CABEÇALHO */
+
+.cabecalho__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+} 
+
+.cabecalho__pesquisar__item {
+  display: none;
+}
+
+/* SEÇÃO SUPERIOR */
+
+.superior__secao__container {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Propriedade de Estilização de texto que impede que o texto quebre a linha */
+  overflow: scroll; /* Ativa o scroll */
+  gap: 15px
+} 
+
+/* MENU */
+
+.menu__container {
+  position: fixed;
+  bottom: 0%;
+  height: 74px;
+  width: 100%;
+}
+
+.menu__lista {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.menu__lista li {
+  align-self: center;
+}
+
+.menu__itens {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+  display: none;
+}
+/* VIDEOS */
+
+.videos__container{
+  margin: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.descricao-video{
+  display: grid;
+  grid-template-areas: 
+    "img h3 h3"
+    "p p p";
+}
+.descricao-video img{
+  grid-area: img;
+  padding: 0.1rem 0.3rem 0.5rem 0.2rem;
+}
+.descricao-video h3{
+  grid-area: h3;
+  padding: 0.1rem 0.1rem 0.5rem 0;
+  font-weight: 700;
+  color: #444444;
+}
+.descricao-video p{
+  grid-area: p;
+  font-size: 14px;
+  color: #444444;
+}
+.videos__item {
+  height: 303px;
+  width: 280px;
+}
+
+
+/* RODAPE */
+
+.rodape__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 834px) {
+  /* CABEÇALHO */
+
+  .cabecalho__pesquisar__item {
+    display: block;
+  }
+
+  /* MENU */
+
+  .menu__container {
+    top: 80px;
+    left: 0%;
+    width: 74px;
+    height: auto;
+  }
+  .menu__lista{
+    flex-direction: column;
+    justify-content:flex-start;
+    gap: 25px;
+  }
+
+  /* RODAPE */
+
+  .rodape__container {
+    justify-content: space-between;
+  }
+}
+
+@media(min-width: 1440px) {
+  .menu__container {
+    width: 239px;
+    overflow: scroll;
+  }
+  .menu__lista:nth-child(2),
+  .menu__lista:nth-child(3),
+  .menu__lista:nth-child(4) {
+    display: flex;
+  }
+  .menu__lista {
+    height: auto;
+    padding: 20px 17px 20px 15px;
+  }
+ .menu__itens {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;;
+  }
+  .menu_lista:nth-child(3){
+    flex-direction: column-reverse;
+  }
+  .jogos {
+    order: 3;
+  }
+
+  .filmes {
+    order: 2;
+  }
+
+  .premium {
+    order: 1;
+  }
+
+  .maispagina {
+    order: 4;
+}
+}
